@@ -1,6 +1,6 @@
 import React,{useState,useEffect,useContext} from 'react'
 import {UserContext} from '../App'
-import {Link,useParams} from 'react-router-dom'
+import {Link,useParams,useHistory} from 'react-router-dom'
 import Loader from "react-loader-spinner"
 
 const Entry = ()=>{
@@ -9,6 +9,7 @@ const Entry = ()=>{
 	const {state,dispatch} = useContext(UserContext)
 	const {entryid} = useParams()
 	const [loading, setLoading] = useState(true)
+	const history = useHistory()
 
 	const [texto,setTexto] = useState("")
 	const [image,setImage] = useState("")
@@ -23,10 +24,12 @@ const Entry = ()=>{
 				console.log(result)
 				setEntry(result)
 				setLoading(false)
+				
 			})
 	},[])
 
 	const makeStep = ()=>{
+		setLoading(true);
 		fetch('/entry/addstep',{
 			method:"put",
 			headers:{
@@ -41,15 +44,9 @@ const Entry = ()=>{
 		}).then(res=>res.json())
 			.then(result=>{
 				console.log(result)
-				const newData = data.map(item=>{
-					if(item._id==result._id){
-						return result
-					}else{
-						return item
-					}
-				})
-
-				setData(newData)
+				setEntry(result)
+				setLoading(false);
+				
 			}).catch(err=>{
 				console.log(err)
 			})
