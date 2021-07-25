@@ -17,11 +17,11 @@ const NavBar = ()=>{
           <Link className="nav-link" to="/createpost">postear</Link>
         </li>,
         <li key="exit" className="nav-item">
-           <button className="nav-link" onClick={()=>{
+           <Link className="nav-link" onClick={()=>{
              localStorage.clear();
              dispatch({type:"CLEAR"})
              history.push('/login')
-           }}>Logout</button>
+           }}>Logout</Link>
         </li>
         ]
     }else{

@@ -3,8 +3,6 @@ import Swal from 'sweetalert2'
 import Loader from "react-loader-spinner"
 import {useHistory,Link} from 'react-router-dom'
 
-import sectionHome from './components/sectionHome'
-
 const Inicio = ()=>{
 	const history = useHistory()
 	const [data, setData ] = useState(null)
@@ -99,10 +97,32 @@ const Inicio = ()=>{
 	        		</div>
     			</div>
 
-			
-			<div className="col-md-6 card mx-auto">
-			
-			</div>
+				<div className="container">
+            		<div className="row text-center text-md-start">
+                		<div className="col-md-4 offset-md-1">
+                    		<div className="manzel__app ">
+                        		<div className="mt-5 pt-5">
+                            	<h3 className="fw-bold">Servicio De Ayuda.</h3>
+                            	<p className="text-muted">Consulta cualquier problemas que tengas con el uso del nuevo SIA.</p>
+                            	<button class="footer_button_custom btn btn-warning fw-bold col-8 py-2">LEARN MORE</button>
+                            	<div className="d-flex justify-content-center justify-content-md-start my-4">
+
+                                <img src="https://res.cloudinary.com/dun3q6j0s/image/upload/v1627249425/khz8pvzrtpkedwb1nq3i.png" className="img-fluid social__img" alt="" />
+
+                                <img src="https://res.cloudinary.com/dun3q6j0s/image/upload/v1627249423/q8r9hqjqq3nzpcseufvg.png" className="img-fluid social__img" alt="" />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-4 offset-md-2 ">
+                    <div className="manzel__app custom__margin">
+                        <img src="https://res.cloudinary.com/dun3q6j0s/image/upload/v1627249349/xcyix3cbqtfdqtmfnbml.png" className="img-fluid " alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+				
 		</div>
 	)
 }

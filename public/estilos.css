@@ -265,6 +265,24 @@ span.pink {
   margin-top: 10px;
 }
 
+.etiqueta{
+  background: #009c86;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.1em;
+  padding-top: 0.1em;
+}
+
+.etiqueta:hover{
+  background: #008F39;
+}
+
 @media screen and (max-width : 1200px){
     .manzel__app{
          margin-top: 100px

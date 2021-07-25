@@ -13,6 +13,7 @@ const Entry = ()=>{
 
 	const [texto,setTexto] = useState("")
 	const [image,setImage] = useState("")
+	const [label,setLabel] = useState("")
 
 	useEffect(()=>{
 		fetch('/entry/entry/'+entryid,{
@@ -52,6 +53,26 @@ const Entry = ()=>{
 			})
 	};
 
+	const makeLabel = ()=>{
+		fetch('/entry/addlabel',{
+			method:"put",
+			headers:{
+				"Content-Type":"application/json",
+				"Authorization": "Bearer "+localStorage.getItem("jwt")
+			},
+			body:JSON.stringify({
+				entryId:entryid,
+				label:label,
+			})
+		}).then(res=>res.json())
+			.then(result=>{
+				console.log(result)
+				setEntry(result)
+			}).catch(err=>{
+				console.log(err)
+			})
+	};
+
 	return(	
 		loading?<Loader
 					className="centrar"
@@ -69,7 +90,27 @@ const Entry = ()=>{
 
 				<div>
 					<h1>{entry.entry.title}</h1>
+
+					etiquetas: 
+					{
+						entry.entry.labels.map(item=>{
+							return(
+								<span className="etiqueta">{item.text}</span>
+							)
+						})
+					}
+					
 				</div>
+
+				<br />
+
+				<form onSubmit={(e)=>{
+					e.preventDefault()
+					makeLabel()}}>
+					<input className="form-control" type="text" placeholder="add a label"
+					onChange={(e)=>setLabel(e.target.value)}
+					/>
+				</form>
 			</div>
 
 			<div className="col-md-12">
@@ -102,6 +143,7 @@ const Entry = ()=>{
 				</div>
 			</div>
 
+			<br />
 			{
 				entry.entry.steps.map(item=>{
 					return(
