@@ -82,6 +82,8 @@ const Entry = ()=>{
 						onChange={(e)=>setTexto(e.target.value)}
 					/>
 
+					<br />
+
 					<input
 						className = "form-control"
 						type="url" 
@@ -89,6 +91,8 @@ const Entry = ()=>{
 						value={image}
 						onChange={(e)=>setImage(e.target.value)}
 					/>
+
+					<br />
 
 					<button 
 						className="btn btn-primary"
@@ -103,7 +107,8 @@ const Entry = ()=>{
 					return(
 						<div>
 							<p>{item.text}</p>
-							<img className="item" src={item.photo} key={item._id} alt={item.titulo}/>
+							<img className ="image-entry" src={item.photo} key={item._id} alt={item.titulo}/>
+							<br />
 						</div>
 					)
 				})

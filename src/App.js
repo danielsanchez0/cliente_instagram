@@ -8,6 +8,7 @@ import Signup from './components/Signup'
 import CreatePost from './components/CreatePost'
 import SuscribesUsers from './components/SuscribesUsers'
 import Entry from './components/Entry'
+import Inicio from './components/Inicio'
 import {reducer,initialState} from './reducers/userReducer'
 
 const Home = lazy(()=> import("./components/Home"))
@@ -42,6 +43,10 @@ const Routing = ()=>{
     }>
       <Switch>
         <Route exact path="/">
+          <Inicio />
+        </Route>
+
+        <Route exact path="/discovery">
           <SuscribesUsers />
         </Route>
 

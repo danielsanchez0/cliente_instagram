@@ -37,6 +37,10 @@
 	animation: spin is ease infinite;
 }
 
+.image-entry{
+	width: 100%
+}
+
 @keyframe spin{
 	0%{
 		transform: rotate(0deg);
