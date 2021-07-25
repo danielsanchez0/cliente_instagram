@@ -26,7 +26,7 @@ const NavBar = ()=>{
         ]
     }else{
       return [
-        <li key="logim" className="nav-item">
+        <li key="login" className="nav-item">
           <Link className="nav-link" to="/login">Login</Link>
         </li>,
         <li key="signup" className="nav-item">
