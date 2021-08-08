@@ -97,49 +97,55 @@ const Signup = ()=>{
 	}
 
 	return(
-		<div className="row">
-			<div className="col-md-6 card mx-auto">
-				<div className="card-body">
-					<div className="form-group">
-						<label>nombre completo:</label>
-						<input 
-							className="form-control" 
-							type="text" 
-							placeholder="nombre"
-							value={name}
-							onChange={(e)=>setName(e.target.value)}
-						/>
+		<div className="container padding-ventana">
+			<div className="row">
+				<div className="col-md-6 center-img">
+					<img src="http://www.ucaldas.edu.co/docs/Web%20Relaciones%20Internacionales/images/logo.gif" />
+				</div>
 
-						<label>correo electronico</label>
-						<input 
-							className="form-control"
-							type="text" 
-							placeholder="email"
-							value={email}
-							onChange={(e)=>setEmail(e.target.value)}
-						/>
-
-						<label>contraseña</label>
-						<input 
-							className="form-control" 
-							type="password" 
-							placeholder="password"
-							value={password}
-							onChange={(e)=>setPassword(e.target.value)}
+				<div className="col-md-6 card mx-auto">
+					<div className="card-body">
+						<div className="form-group">
+							<label>nombre completo:</label>
+							<input 
+								className="form-control" 
+								type="text" 
+								placeholder="ingresa tu nombre completo"
+								value={name}
+								onChange={(e)=>setName(e.target.value)}
 							/>
 
-						<label>File</label>
-						<input 
-							className="form-control" 
-							type="file"
-							onChange={(e)=>setImage(e.target.files[0])}
-						/>
-						<hr/>
-						<button 
-							className="btn btn-primary"
-							onClick={()=>postData()}>Login
-						</button>
-						<h5><Link to="/signin">¿ya tengo cuenta?</Link></h5>
+							<label>correo electronico</label>
+							<input 
+								className="form-control"
+								type="text" 
+								placeholder="ingresa tu email"
+								value={email}
+								onChange={(e)=>setEmail(e.target.value)}
+							/>
+
+							<label>contraseña</label>
+							<input 
+								className="form-control" 
+								type="password" 
+								placeholder="ingresa tu contraseña"
+								value={password}
+								onChange={(e)=>setPassword(e.target.value)}
+								/>
+
+							<label>Foto De Perfil</label>
+							<input 
+								className="form-control" 
+								type="file"
+								onChange={(e)=>setImage(e.target.files[0])}
+							/>
+							<hr/>
+							<button 
+								className="btn btn-primary"
+								onClick={()=>postData()}>Login
+							</button>
+							<h5><Link to="/signin">¿ya tengo cuenta?</Link></h5>
+						</div>
 					</div>
 				</div>
 			</div>

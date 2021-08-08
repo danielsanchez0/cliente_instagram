@@ -1,3 +1,23 @@
+.center-img{
+  justify-content: center;
+  align-items: center;
+}
+
+.icon{
+  width: 40px;
+  height: 40px;
+  align-self: center;
+}
+
+.padding-ventana{
+  padding-top: 100px;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}
+
 .gallery{
 	display: flex;
 	flex-wrap: wrap;

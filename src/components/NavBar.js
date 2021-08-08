@@ -14,14 +14,17 @@ const NavBar = ()=>{
           <Link key="profile" className="nav-link" to="/profile">Profile</Link>
         </li>,
         <li key="postear" className="nav-item">
-          <Link className="nav-link" to="/createpost">postear</Link>
+          <Link className="nav-link" to="/createpost">Comentanos</Link>
+        </li>,
+        <li key="foro" className="nav-item">
+          <Link className="nav-link" to="/post">Foro</Link>
         </li>,
         <li key="exit" className="nav-item">
            <Link className="nav-link" onClick={()=>{
              localStorage.clear();
              dispatch({type:"CLEAR"})
              history.push('/login')
-           }}>Logout</Link>
+           }}>Salir</Link>
         </li>
         ]
     }else{
@@ -38,7 +41,9 @@ const NavBar = ()=>{
 
 	return(
 		<nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-  			<Link className="navbar-brand" to={state?"/":"/signin"}>social network</Link>
+  			<Link className="navbar-brand" to={state?"/":"/login"}>
+          <img className="icon" src="http://www.ucaldas.edu.co/docs/Web%20Relaciones%20Internacionales/images/logo.gif" />
+        </Link>
   			<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     			<span className="navbar-toggler-icon"></span>
   			</button>

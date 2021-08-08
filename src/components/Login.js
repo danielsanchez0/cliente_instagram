@@ -61,32 +61,37 @@ const Login = ()=>{
 
 	return(
 		loading?
-		<div className="row">
-			<div className="col-md-6 card mx-auto">
-				<div className="card-body">
-					<div className="form-group">
-						<label>correo electronico: </label>
-						<input 
-							className="form-control" 
-							type="text" 
-							placeholder="email"
-							value={email}
-							onChange={(e)=>setEmail(e.target.value)}
-							/>
+		<div className="container padding-ventana">
+			<div className="row">
+				<div className="col-md-6 center-img">
+					<img src="http://www.ucaldas.edu.co/docs/Web%20Relaciones%20Internacionales/images/logo.gif" />
+				</div>
+				<div className="col-md-6 card">
+					<div className="card-body">
+						<div className="form-group">
+							<label>correo electronico: </label>
+							<input 
+								className="form-control" 
+								type="text" 
+								placeholder="email"
+								value={email}
+								onChange={(e)=>setEmail(e.target.value)}
+								/>
 
-						<label>contraseña: </label>
-						<input 
-							className="form-control" 
-							type="password" 
-							placeholder="password"
-							value={password}
-							onChange={(e)=>setPassword(e.target.value)}
-							/>
-						<hr/>
-						<button 
-							className="btn btn-primary"
-							onClick={()=>signin()}
-							>Login</button>
+							<label>contraseña: </label>
+							<input 
+								className="form-control" 
+								type="password" 
+								placeholder="password"
+								value={password}
+								onChange={(e)=>setPassword(e.target.value)}
+								/>
+							<hr/>
+							<button 
+								className="btn btn-primary"
+								onClick={()=>signin()}
+								>Ingresar</button>
+						</div>
 					</div>
 				</div>
 			</div>

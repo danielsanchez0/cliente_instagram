@@ -71,39 +71,50 @@ const CreatePost = ()=>{
 
 	return(
 		loading?
-		<div className="row">
+		<div className="row padding-ventana">
 			<div className="col-md-6 card mx-auto">
+				<div className="card-header">
+					Publica Tu Problema.
+				</div>
+				
 				<div className="form-group">
+				<div className="card-body">
+					<label>asunto:</label>
 					<input 
 						className = "form-control"
 						type="text"
-						placeholder="title"
+						placeholder="escribe el asunto"
 						value={title}
 						onChange={(e)=>setTitle(e.target.value)}
 					/>
 
+					<label>descripción:</label>
 					<input
 						className = "form-control"
 						type="text" 
-						placeholder="body"
+						placeholder="describe tu problema"
 						value={body}
 						onChange={(e)=>setBody(e.target.value)}
 					/>
 
 					<div>
-						<span>File</span>
+						<span>Evidencia:</span>
+						<p>por favor, sube una fotografia.</p>
 						<input 
 							type="file"
 							onChange={(e)=>setImage(e.target.files[0])}
 						/>
 					</div>
+				</div>
 
-					<button 
-						className="btn btn-primary"
-						onClick={()=>postDetails()}
-					>
-						submit post
-					</button>
+					<div className="card-footer">
+						<button 
+							className="btn btn-primary"
+							onClick={()=>postDetails()}
+						>
+							submit post
+						</button>
+					</div>
 					</div>
 			</div>
 		</div>
