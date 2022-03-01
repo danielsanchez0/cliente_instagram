@@ -9,6 +9,8 @@ import CreatePost from './components/CreatePost'
 import SuscribesUsers from './components/SuscribesUsers'
 import Entry from './components/Entry'
 import Inicio from './components/Inicio'
+import Stats from './components/Stats'
+
 import {reducer,initialState} from './reducers/userReducer'
 
 const Home = lazy(()=> import("./components/Home"))
